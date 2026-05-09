@@ -94,14 +94,13 @@ class TaskLossLoggingTrainer(Trainer):
 
     @torch.no_grad()
     def _compute_per_sample_ce_loss(
-            self,
-            logits: torch.Tensor,
-            labels: torch.Tensor,
-            ignore_index: int = -100,
+        self,
+        logits: torch.Tensor,
+        labels: torch.Tensor,
+        ignore_index: int = -100,
     ) -> torch.Tensor:
         if logits.dim() != 3 or labels.dim() != 2:
-            raise ValueError \
-                (f"logits/labels shape mismatch: logits={tuple(logits.shape)}, labels={tuple(labels.shape)}")
+            raise ValueError(f"logits/labels shape mismatch: logits={tuple(logits.shape)}, labels={tuple(labels.shape)}")
 
 
         shift_logits = logits[:, :-1, :].contiguous()
@@ -125,11 +124,11 @@ class TaskLossLoggingTrainer(Trainer):
         return per_sample
 
     def compute_loss(
-            self,
-            model: nn.Module,
-            inputs: dict[str, Union[torch.Tensor, Any]],
-            return_outputs: bool = False,
-            num_items_in_batch: Optional[torch.Tensor] = None,
+        self,
+        model: nn.Module,
+        inputs: dict[str, Union[torch.Tensor, Any]],
+        return_outputs: bool = False,
+        num_items_in_batch: Optional[torch.Tensor] = None,
     ):
         task_names = inputs.pop("__task_name", None)
 
@@ -176,18 +175,18 @@ class TaskLossLoggingTrainer(Trainer):
             loss = outputs["loss"] if isinstance(outputs, dict) else outputs[0]
 
         if (
-                self.args.average_tokens_across_devices
-                and (self.model_accepts_loss_kwargs or self.compute_loss_func)
-                and num_items_in_batch is not None
+            self.args.average_tokens_across_devices
+            and (self.model_accepts_loss_kwargs or self.compute_loss_func)
+            and num_items_in_batch is not None
         ):
             loss *= self.accelerator.num_processes
 
         try:
             if (
-                    task_names is not None
-                    and isinstance(task_names, list)
-                    and labels_in_batch is not None
-                    and self._should_log_task_loss()
+                task_names is not None
+                and isinstance(task_names, list)
+                and labels_in_batch is not None
+                and self._should_log_task_loss()
             ):
                 gs = int(getattr(self.state, "global_step", 0) or 0)
                 if self._last_taskloss_log_step != gs:
@@ -435,9 +434,9 @@ def _is_allowed_suffix(name: str, suffixes: Tuple[str, ...]) -> bool:
 
 
 def collect_lora_target_modules(
-        model: nn.Module,
-        enabled_groups: Sequence[str],
-        log: Callable[[str], None] = print,
+    model: nn.Module,
+    enabled_groups: Sequence[str],
+    log: Callable[[str], None] = print,
 ) -> List[str]:
     targets: List[str] = []
 
@@ -464,9 +463,9 @@ def collect_lora_target_modules(
 
 
 def assert_lora_hits_by_group_strict(
-        model: nn.Module,
-        enabled_groups: Sequence[str],
-        log: Callable[[str], None] = print,
+    model: nn.Module,
+    enabled_groups: Sequence[str],
+    log: Callable[[str], None] = print,
 ) -> Dict[str, List[str]]:
     stats: Dict[str, List[str]] = {g: [] for g in LORA_GROUPS.keys()}
 
@@ -870,7 +869,7 @@ def main(args: argparse.Namespace) -> None:
             trainable += _p.numel()
             _n_list.append(_n)
     log(f"[trainable parameters] {_n_list}")
-    log(f"[TrainConfig] Trainable params: {trainable:,} / {total:,} ({trainabl e /total:.4%})")
+    log(f"[TrainConfig] Trainable params: {trainable:,} / {total:,} ({trainable /total:.4%})")
 
     model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
 
@@ -935,12 +934,11 @@ def main(args: argparse.Namespace) -> None:
 
     _sanity_check_one_batch(dataset, data_collator, tokenizer, out_dir=f"{output_dir}/sanity_check_one_batch", log=log)
 
-
     callbacks = [
         ExportMergedEveryNStepsCallback(
             output_dir=output_dir,
             tokenizer=tokenizer,
-            save_steps=save_step s *5,
+            save_steps=save_steps * 5,
             top_k=save_total_limit,
             name_prefix="unsloth_finetune",
             layer_name="page_fusion_layer",
@@ -1021,7 +1019,7 @@ def main(args: argparse.Namespace) -> None:
         model.save_pretrained_merged(f"{output_dir}/unsloth_finetune", tokenizer)
         patch_merged_add_page_fusion_layer(model, f"{output_dir}/unsloth_finetune", layer_name="page_fusion_layer", shard_name="model-page_fusion_layer.safetensors", log=log)
 
-    # 测试集上评估 (太慢了，先注释掉)
+    # test evaluation (It's too slow)
     # if "test" in dataset_dict.keys():
     #     test_metrics = trainer.evaluate(eval_dataset=dataset_dict["test"], metric_key_prefix="test")
     #     log(test_metrics)

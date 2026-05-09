@@ -557,11 +557,6 @@ class DeepseekOCRModel(DeepseekV2Model):
                         feat_dim_global = list(global_features_page.shape[1:])
                         global_features = self.page_fusion_layer(global_features_page.view(*([n_img_o, n_page_o] + feat_dim_global))).view(*([n_img_o]+feat_dim_global))
 
-                        print('=====================')
-                        print('BASE: ', global_features.shape)
-                        print('PATCHES: ', local_features.shape)
-                        print('=====================')
-
                         _, hw, n_dim = global_features.shape
                         h = w = int(hw ** 0.5)
 
