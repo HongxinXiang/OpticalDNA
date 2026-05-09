@@ -591,7 +591,7 @@ def parse_args() -> argparse.Namespace:
     g_io.add_argument("--dataset", type=str,
                       default=cfg.get("dataset", "hg38-2048"),
                       help="Dataset name (subdirectory under --dataroot) to use for training, e.g. 'hg38-2048'.")
-    g_io.add_argument("--output_dir", type=str, default=cfg.get("output_dir", "./outputs/train_hg38_2048_ddp_rank0log"),
+    g_io.add_argument("--output_dir", type=str, default=cfg.get("output_dir", "./outputs/train_hg38_2048"),
                       help="Output dir for logs/checkpoints/args.json (rank0 writes).")
 
 
