@@ -570,7 +570,7 @@ def parse_args() -> argparse.Namespace:
 
     parser = argparse.ArgumentParser(
         description=(
-            "Distributed training script for HG38 ImageDNA pretraining.\n"
+            "Distributed training script for OpticalDNA pre-training.\n"
             "Supports single-node multi-GPU training via torch.distributed (DDP).\n"
             "All arguments can be provided via CLI or a JSON/YAML config file; "
             "CLI arguments always override values loaded from the config."

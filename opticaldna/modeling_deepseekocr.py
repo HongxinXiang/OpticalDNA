@@ -479,7 +479,6 @@ class DeepseekOCRModel(DeepseekV2Model):
         images_spatial_crop: Optional[torch.FloatTensor] = None,
         return_dict: Optional[bool] = None,
     ) -> Union[Tuple, BaseModelOutputWithPast]:
-        # print("xhxhxh...", len(images), len(images[0]))
 
 
         if inputs_embeds is None:
