@@ -16,6 +16,17 @@ Official code release for **OpticalDNA: Rethinking Genomic Modeling Through Opti
 
 ## 📁 Project Directory / Table of Contents
 
+1. [News](#-news)
+2. [Repository Structure](#-repository-structure)
+3. [Summary](#-summary)
+4. [Environment](#%EF%B8%8F-environment)
+5. [Install VisualDNA](#install-visualdna)
+6. [Data Layout](#data-layout)
+7. [Raw Data Download](#raw-data-download)
+8. [Process Raw Data with VisualDNA](#process-raw-data-with-visualdna)
+9. [Pre-training](#pre-training)
+10. [Notes for Release Users](#notes-for-release-users)
+11. [License](#license)
 
 ## 📢 News
 
@@ -30,17 +41,25 @@ Official code release for **OpticalDNA: Rethinking Genomic Modeling Through Opti
 
 ```text
 OpticalDNA/
-├── opticaldna/                 # Model configuration and OpticalDNA model wrappers
-├── src/
-│   ├── pretrain_opticaldna.py   # Pretraining entry point
-│   └── opticaldna_data/         # Dataset, conversation builder, and data collator
-├── scripts/
-│   └── data/                   # Data preparation utilities
-├── assets/                     # Figures used by the README
-├── environment.yml             # Conda environment specification
+├── opticaldna/                 # 1. Model configuration, tokenizer, and OpticalDNA model wrappers
+├── src/                        # 2. Training and data-loading source code
+│   ├── pretrain_opticaldna.py   #    Pre-training entry point
+│   └── opticaldna_data/         #    Dataset, conversation builder, and data collator
+├── scripts/                    # 3. Standalone utility scripts
+│   └── data/                   #    Data preparation utilities
+├── assets/                     # 4. Figures used by the README
+├── environment.yml             # 5. Conda environment specification
 ├── LICENSE
 └── README.md
 ```
+
+The main directories are:
+
+1. `opticaldna/`: model configuration, tokenizer files, and OpticalDNA model wrappers.
+2. `src/`: training entry point and data-loading modules used during pre-training.
+3. `scripts/data/`: standalone data preparation scripts for generating processed VisualDNA data.
+4. `assets/`: figures used in this README.
+
 
 ## 🧪 Summary
 
@@ -327,11 +346,47 @@ The expected raw file path is:
 /path/to/opticaldna_dataset/<raw-dataset>/raw/<raw-dataset>.parquet
 ```
 
-## Windows CMD Examples
+## Command Examples
+
+Most pre-training workflows are expected to run on Linux servers. Windows `cmd` examples are also provided for users who prepare data locally.
+
+### Linux/macOS Examples
+
+#### Generate processed data
+
+```bash
+python scripts/data/generate_processed.py \
+  --dataroot /path/to/opticaldna_dataset \
+  --dataset hg38-2048 \
+  --raw-format parquet \
+  --seq-columns seq \
+  --img-width 640 \
+  --img-height 640 \
+  --font-size 14 \
+  --line-spacing 1.6 \
+  --merge-pages \
+  --save-bbox \
+  --shard-size auto
+```
+
+#### Add metadata columns
+
+```bash
+python scripts/data/add_raw_columns_to_processed_index.py \
+  --dataroot /path/to/opticaldna_dataset \
+  --processed-dataset hg38-2048 \
+  --raw-dataset hg38-2048 \
+  --render-id render_w640_h640_fs14_ls1.6_hash_f345fcfc \
+  --raw-format parquet \
+  --key index \
+  --columns chr_name
+```
+
+### Windows CMD Examples
 
 If you run the commands in Windows `cmd`, use `^` for line continuation.
 
-### Generate processed data
+#### Generate processed data
 
 ```cmd
 python scripts\data\generate_processed.py ^
@@ -348,7 +403,7 @@ python scripts\data\generate_processed.py ^
   --shard-size auto
 ```
 
-### Add metadata columns
+#### Add metadata columns
 
 ```cmd
 python scripts\data\add_raw_columns_to_processed_index.py ^
@@ -444,8 +499,3 @@ src/pretrain_opticaldna.py --backend nccl \
 ## License
 
 This repository is released under the MIT License. Parts of the model implementation are adapted from third-party open-source projects; please also follow the corresponding upstream licenses and notices where applicable.
-
-
-
-
-
