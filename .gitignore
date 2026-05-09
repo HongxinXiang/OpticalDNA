@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.env
+.venv/
+venv/
+conda-env/
+
+# Training outputs and local data
+outputs/
+runs/
+wandb/
+checkpoints/
+*.log
+*.tmp
+*.cache
+
+# Large datasets / checkpoints
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.parquet
+*.fa
+*.fasta
+*.fna
+*.fastq
+*.gz
+
+# Local editor files
+.idea/
+.vscode/
+.DS_Store
