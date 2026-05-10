@@ -106,12 +106,12 @@ OpticalDNA reformulates genomic sequence modeling as a document-understanding pr
 
 ### 2.1 GPU Environment
 
-- CUDA Toolkit: 11.8
-- CUDA: 7.5
+- CUDA Toolkit >= 11.8
+- CUDA >= 7.5
 - Triton: 3.4.0
 - Unsloth 2025.10.12
 - Transformers: 4.56.2
-- Torch: 2.6.0+cu118
+- Torch >= 2.6.0+cu118
 
 ### 2.2 Conda Environment Setup
 
