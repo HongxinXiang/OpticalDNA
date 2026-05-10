@@ -337,7 +337,7 @@ python scripts/data/add_raw_columns_to_processed_index.py \
   --render-id <render_config_name> \
   --raw-format parquet \
   --key index \
-  --columns chr_name split species
+  --columns chr_name,split,species
 ```
 
 Here:
