@@ -120,8 +120,8 @@ def main() -> None:
     if args.visualdna_root:
         sys.path.insert(0, str(Path(args.visualdna_root).expanduser().resolve()))
 
-    from visualdna.visualdna.data import ShardedBuilder
-    from visualdna.visualdna.render import BaseRenderConfig
+    from visualdna.data import ShardedBuilder
+    from visualdna.render import BaseRenderConfig
 
     config = BaseRenderConfig(
         img_width=args.img_width,

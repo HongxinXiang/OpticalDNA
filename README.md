@@ -152,10 +152,12 @@ pip install "unsloth[cu118-torch260]"
 
 # Optional: install PyTorch and related local wheels if needed
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu118
+# download from https://pytorch-geometric.com/whl/torch-2.6.0%2Bcu118.html
 pip install torch_cluster-1.6.3+pt26cu118-cp312-cp312-linux_x86_64.whl
 pip install torch_scatter-2.1.2+pt26cu118-cp312-cp312-linux_x86_64.whl
 pip install torch_sparse-0.6.18+pt26cu118-cp312-cp312-linux_x86_64.whl
 pip install torch_spline_conv-1.2.2+pt26cu118-cp312-cp312-linux_x86_64.whl
+
 pip install numpy==1.26
 ```
 
@@ -269,8 +271,8 @@ python scripts/data/generate_processed.py \
 The command above corresponds to the following VisualDNA configuration:
 
 ```python
-from visualdna.visualdna.data import ShardedBuilder
-from visualdna.visualdna.render import BaseRenderConfig
+from visualdna.data import ShardedBuilder
+from visualdna.render import BaseRenderConfig
 
 config = BaseRenderConfig(
     img_width=640,
