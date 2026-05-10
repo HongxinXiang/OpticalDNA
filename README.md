@@ -91,12 +91,22 @@ OpticalDNA reformulates genomic sequence modeling as a document-understanding pr
 > 📄 **Citation**
 >
 > ```bibtex
+> # ICML
 > @inproceedings{xiang2026rethinking,
->   title         = {Rethinking Genomic Modeling Through Optical Character Recognition},
->   author        = {Xiang, Hongxin and Ma, Pengsen and Cao, Yunkang and Yu, Di and Chen, Haowen and Yang, Xinyu and Zeng, Xiangxiang},
->   journal       = {arXiv preprint arXiv:2602.02014},
->   year          = {2026},
->   url           = {https://arxiv.org/abs/2602.02014}
+>   title     = {Rethinking Genomic Modeling Through Optical Character Recognition},
+>   author    = {Xiang, Hongxin and Ma, Pengsen and Cao, Yunkang and Yu, Di and Chen, Haowen and Yang, Xinyu and Zeng, Xiangxiang},
+>   booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
+>   year      = {2026},
+>   url       = {https://openreview.net/forum?id=nggzekChuU}
+> }
+> 
+> # arXiv
+> @article{xiang2026rethinking_arxiv,
+>   title   = {Rethinking Genomic Modeling Through Optical Character Recognition},
+>   author  = {Xiang, Hongxin and Ma, Pengsen and Cao, Yunkang and Yu, Di and Chen, Haowen and Yang, Xinyu and Zeng, Xiangxiang},
+>   journal = {arXiv preprint arXiv:2602.02014},
+>   year    = {2026},
+>   url     = {https://arxiv.org/abs/2602.02014}
 > }
 > ```
 
