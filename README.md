@@ -221,8 +221,8 @@ We provide the raw data links used to construct the OpticalDNA pre-training data
 
 | Dataset | Description | Raw Data Link | Expected Raw Directory |
 |---|---|---|---|
-| HG38 | Human reference genome data used for OpticalDNA pre-training | [Download](<HG38_RAW_DOWNLOAD_LINK>) | `/path/to/opticaldna_dataset/hg38-2048/raw/` |
-| Rice | Rice genome data used for OpticalDNA pre-training | [Download](<RICE_RAW_DOWNLOAD_LINK>) | `/path/to/opticaldna_dataset/rice/raw/` |
+| HG38 | Human reference genome data used for OpticalDNA pre-training | [Download](<https://huggingface.co/datasets/hxxiang/dna_benchmarks/tree/main/raw_data/hg38-2048>) | `/path/to/opticaldna_dataset/hg38-2048/raw/` |
+| Rice | Rice genome data used for OpticalDNA pre-training | [Download](https://huggingface.co/datasets/hxxiang/dna_benchmarks/tree/main/raw_data/RiceSuperPIRdb-PRETRAIN_GENOME_TILING/NIP-T2T_w2048_o1920_SeqCase.UPPER) | `/path/to/opticaldna_dataset/rice/raw/` |
 
 ### 4.3 Process Raw Data with VisualDNA
 
