@@ -14,6 +14,15 @@ Official code release for **OpticalDNA: Rethinking Genomic Modeling Through Opti
 
 ---
 
+## TODO LIST
+
+
+* [ ] Publish pretrained model checkpoints on Hugging Face.
+* [ ] Publish the VisualDNA installation package and setup instructions.
+
+> **Note:** We have been quite busy recently, but these resources will be added soon.
+
+
 ## Project Directory / Table of Contents
 
 - [📢 News](#-news)
