@@ -1,82 +1,96 @@
-# OpticalDNA: Rethinking Genomic Modeling Through Optical Character Recognition
+<p align="center">
+  <img src="assets/HNU.png" height="58" alt="Hunan University">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/YL-lab.png" height="58" alt="Yuelushan Laboratory">
+</p>
 
-Official code release for **OpticalDNA: Rethinking Genomic Modeling Through Optical Character Recognition**.
+<h1 align="center">OpticalDNA</h1>
 
-[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
-<a href="https://github.com/HongxinXiang/OpticalDNA/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/HongxinXiang/OpticalDNA?style=flat-square"></a>
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/HongxinXiang/OpticalDNA?style=flat-square">
-<a href="" target='_blank'><img src="https://visitor-badge.laobi.icu/badge?page_id=HongxinXiang.OpticalDNA-X&left_color=gray&right_color=orange"></a>
+<h3 align="center">Rethinking Genomic Modeling Through Optical Character Recognition</h3>
 
+<p align="center">
+  <a href="https://openreview.net/forum?id=nggzekChuU">
+    <img src="https://img.shields.io/badge/ICML_2026-Paper-5B4BBA?style=flat-square&logo=readthedocs&logoColor=white" alt="ICML 2026 Paper">
+  </a>
+  <a href="https://arxiv.org/abs/2602.02014">
+    <img src="https://img.shields.io/badge/arXiv-2602.02014-B31B1B?style=flat-square&logo=arxiv&logoColor=white" alt="arXiv">
+  </a>
+  <a href="https://hongxinxiang.github.io/projects/OpticalDNA/">
+    <img src="https://img.shields.io/badge/Project-Website-1E5AA8?style=flat-square&logo=googlechrome&logoColor=white" alt="Project Website">
+  </a>
+  <a href="https://huggingface.co/hxxiang/opticaldna-hg38-2048">
+    <img src="https://img.shields.io/badge/🤗_Hugging_Face-HG38--2048-FFD21E?style=flat-square" alt="Hugging Face HG38">
+  </a>
+  <a href="https://huggingface.co/hxxiang/opticaldna-rice-2048">
+    <img src="https://img.shields.io/badge/🤗_Hugging_Face-Rice--2048-FFD21E?style=flat-square" alt="Hugging Face Rice">
+  </a>
+</p>
 
-<a href='https://hongxinxiang.github.io/projects/OpticalDNA/'><img src='https://img.shields.io/badge/Project-Page-pink?style=flat&logo=rescript&logoColor=pink'></a>
-<a href='https://arxiv.org/abs/2602.02014'><img src='https://img.shields.io/badge/Arxiv-2602.02014-A42C25?style=flat&logo=arXiv&logoColor=A42C25'></a>
-<a href='https://arxiv.org/pdf/2602.02014'><img src='https://img.shields.io/badge/Paper-PDF-yellow?style=flat&logo=arXiv&logoColor=yellow'></a>
+<p align="center">
+  <a href="https://github.com/HongxinXiang/OpticalDNA/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/HongxinXiang/OpticalDNA/ci.yml?branch=main&style=flat-square&label=CI&logo=githubactions&logoColor=white&color=2088FF" alt="CI">
+  </a>
+  <a href="https://github.com/HongxinXiang/OpticalDNA/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/HongxinXiang/OpticalDNA?style=flat-square&label=License&logo=opensourceinitiative&logoColor=white&color=2EA44F" alt="License">
+  </a>
+  <a href="https://github.com/HongxinXiang/OpticalDNA/stargazers">
+    <img src="https://img.shields.io/github/stars/HongxinXiang/OpticalDNA?style=flat-square&logo=github&logoColor=white&label=Stars&color=181717" alt="GitHub Stars">
+  </a>
+  <img src="https://img.shields.io/github/last-commit/HongxinXiang/OpticalDNA?style=flat-square&label=Last%20commit&logo=git&logoColor=white&color=F05032" alt="Last commit">
+  <img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=FFD43B" alt="Python 3.12+">
+  <a href="" target='_blank'><img src="https://visitor-badge.laobi.icu/badge?page_id=HongxinXiang.OpticalDNA-X&left_color=gray&right_color=orange"></a>
+</p>
+
+<p align="center">
+  <strong>Official ICML 2026 Implementation</strong>
+</p>
 
 ---
 
-## TODO LIST
+## ✅ Release Status
 
-* [ ] Publish pretrained model checkpoints on Hugging Face.
-* [ ] Publish the VisualDNA installation package and setup instructions.
-* [ ] Provide usage examples and inference interface.
-
-> **Note:** We have been quite busy recently, but these resources will be added soon.
-
+- [x] **Pretrained checkpoints:** HG38 and Rice models are available on Hugging Face.
+- [x] **VisualDNA pipeline:** installation and data-rendering instructions are public.
+- [x] **Inference APIs:** visual features, Decoder features, prompt-conditioned generation, and multi-page inputs are supported.
 
 ## Project Directory / Table of Contents
 
 - [📢 News](#-news)
-- [📁 Repository Structure](#-repository-structure)
 - [🧪 1. Summary](#-1-summary)
   - [1.1 Highlights](#11-highlights)
   - [1.2 Citation](#12-citation)
-- [⚙️ 2. Environment](#%EF%B8%8F-2-environment)
-  - [2.1 GPU Environment](#21-gpu-environment)
-  - [2.2 Conda Environment Setup](#22-conda-environment-setup)
-- [🧬 3. Install VisualDNA](#-3-install-visualdna)
-- [🗂️ 4. Data Preparation](#%EF%B8%8F-4-data-preparation)
-  - [4.1 Data Layout](#41-data-layout)
-  - [4.2 Raw Data Download](#42-raw-data-download)
-  - [4.3 Process Raw Data with VisualDNA](#43-process-raw-data-with-visualdna)
-  - [4.4 Command Examples](#44-command-examples)
-  - [4.5 Notes](#45-notes)
-- [🚀 5. Pre-training](#-5-pre-training)
-  - [5.1 HG38 Example](#51-hg38-example)
-  - [5.2 Rice Example](#52-rice-example)
-- [📝 6. Notes for Release Users](#-6-notes-for-release-users)
-- [📄 7. License](#-7-license)
+- [🤗 2. Pretrained Models and Usage](#-2-pretrained-models-and-usage)
+  - [2.1 Released Models](#21-released-models)
+  - [2.2 Quick Start: Visual Features](#22-quick-start-visual-features)
+  - [2.3 Feature Extraction Options](#23-feature-extraction-options)
+  - [2.4 Decoder Features](#24-decoder-features)
+  - [2.5 Prompt-conditioned Generation](#25-prompt-conditioned-generation)
+  - [2.6 Transformers API](#26-transformers-api)
+- [📁 Repository Structure](#-repository-structure)
+- [⚙️ 3. Environment](#%EF%B8%8F-3-environment)
+  - [3.1 GPU Environment](#31-gpu-environment)
+  - [3.2 Conda Environment Setup](#32-conda-environment-setup)
+- [🧬 4. Install VisualDNA](#-4-install-visualdna)
+- [🗂️ 5. Data Preparation](#%EF%B8%8F-5-data-preparation)
+  - [5.1 Data Layout](#51-data-layout)
+  - [5.2 Raw Data Download](#52-raw-data-download)
+  - [5.3 Process Raw Data with VisualDNA](#53-process-raw-data-with-visualdna)
+  - [5.4 Command Examples](#54-command-examples)
+  - [5.5 Notes](#55-notes)
+- [🚀 6. Pre-training](#-6-pre-training)
+  - [6.1 HG38 Example](#61-hg38-example)
+  - [6.2 Rice Example](#62-rice-example)
+- [📝 7. Notes for Release Users](#-7-notes-for-release-users)
+- [✅ 8. Testing and CI](#-8-testing-and-ci)
+- [📄 9. License](#-9-license)
 
 ## 📢 News
 
-- **[2025/05/09]** Repository initialized!
-
-- **[2026/04/30]** 🎉 Paper was accepted by _ICML 2026_ !
+- **[2026/08/27]** 🤗 Released the pretrained **OpticalDNA-HG38-2048** and **OpticalDNA-Rice-2048** checkpoints on Hugging Face.
+- **[2026/05/09]** Repository initialized!
+- **[2026/04/30]** 🎉 Paper accepted by **ICML 2026**.
 
 ---
-
-
-## 📁 Repository Structure
-
-```text
-OpticalDNA/
-├── opticaldna/                 # 1. Model configuration, tokenizer, and OpticalDNA model wrappers
-├── src/                        # 2. Training and data-loading source code
-│   ├── pretrain_opticaldna.py   #    Pre-training entry point
-│   └── opticaldna_data/         #    Dataset, conversation builder, and data collator
-├── scripts/                    # 3. Standalone utility scripts
-│   └── data/                   #    Data preparation utilities
-├── assets/                     # 4. Figures used by the README
-├── environment.yml             # 5. Conda environment specification
-├── LICENSE
-└── README.md
-```
-
-The main directories are:
-
-1. `opticaldna/`: model configuration, tokenizer files, and OpticalDNA model wrappers.
-2. `src/`: training entry point and data-loading modules used during pre-training.
-3. `scripts/data/`: standalone data preparation scripts for generating processed VisualDNA data.
-4. `assets/`: figures used in this README.
 
 ## 🧪 1. Summary
 
@@ -121,9 +135,357 @@ OpticalDNA reformulates genomic sequence modeling as a document-understanding pr
 
 ---
 
-## ⚙️ 2. Environment
+## 🤗 2. Pretrained Models and Usage
 
-### 2.1 GPU Environment
+Most users do **not** need to pre-train OpticalDNA from scratch. The released checkpoints can be downloaded automatically from Hugging Face and used directly for genomic feature extraction, prompt-conditioned Decoder representations, and OCR-style genomic inference.
+
+### 2.1 Released Models
+
+| Model | Pretraining corpus | Checkpoint | Feature width | Hugging Face |
+|---|---|---:|---:|---|
+| **OpticalDNA-HG38-2048** | Human reference genome (HG38) | step 190,000 | 1,280 | [🤗 `hxxiang/opticaldna-hg38-2048`](https://huggingface.co/hxxiang/opticaldna-hg38-2048) |
+| **OpticalDNA-Rice-2048** | Rice NIP-T2T (`w2048`, `o1920`) | step 150,000 | 1,280 | [🤗 `hxxiang/opticaldna-rice-2048`](https://huggingface.co/hxxiang/opticaldna-rice-2048) |
+
+Use the **HG38 checkpoint** for human-genome applications and the **Rice checkpoint** for rice/plant genomic applications. Both checkpoints expose the same public OpticalDNA API.
+
+> **Input format.** OpticalDNA operates on rendered DNA document images. Raw DNA sequences can first be converted into OpticalDNA-compatible pages with [VisualDNA](#-4-install-visualdna).
+
+### 2.2 Quick Start: Visual Features
+
+The simplest downstream use is to extract a compact visual genomic representation. This path runs the visual encoder, projector, and page-fusion module, and **does not execute the language Decoder**.
+
+```python
+from opticaldna import OpticalDNA
+
+model = OpticalDNA(
+    "hxxiang/opticaldna-hg38-2048",
+    device="cuda",
+)
+
+features = model.extract_features(
+    "assets/640x640.png",
+    pooling="mean",
+    to_cpu=True,
+)
+
+print(type(features))
+print(features.shape)
+```
+
+Expected output:
+
+```text
+<class 'torch.Tensor'>
+torch.Size([1280])
+```
+
+`extract_features(...)` is an alias of `extract_visual_features(...)`. Both return visual representations **before** the language Decoder.
+
+For a multi-page DNA document, pass the pages in reading order:
+
+```python
+features = model.extract_features(
+    ["page1.png", "page2.png", "page3.png"],
+    pooling="mean",
+    to_cpu=True,
+)
+
+print(features.shape)
+# torch.Size([1280])
+```
+
+The list represents **one multi-page document**, not a batch. OpticalDNA fuses page-level representations before returning the document features.
+
+### 2.3 Feature Extraction Options
+
+Both released models use a **1,280-dimensional** OpticalDNA representation space. The final tensor shape depends on the pooling strategy.
+
+| `pooling` | Output shape | Description | Typical use |
+|---|---|---|---|
+| `"mean"` | `[1280]` | Mean over all visual tokens | Recommended compact document embedding for linear probing / MLP heads |
+| `"max"` | `[1280]` | Dimension-wise maximum over visual tokens | Emphasizes strongly activated visual/genomic features |
+| `"none"` | `[N_visual_tokens, 1280]` | Keeps every fused visual token | Custom attention, token-level analysis, or user-defined pooling |
+
+`N_visual_tokens` is not fixed: it depends on the number of pages and image/crop configuration. The **feature width is always 1,280** for the released HG38 and Rice checkpoints.
+
+Examples:
+
+```python
+# Mean-pooled document representation.
+feat_mean = model.extract_features(
+    "assets/640x640.png",
+    pooling="mean",
+    to_cpu=True,
+)
+print(feat_mean.shape)
+# torch.Size([1280])
+
+# Max-pooled document representation.
+feat_max = model.extract_features(
+    "assets/640x640.png",
+    pooling="max",
+    to_cpu=True,
+)
+print(feat_max.shape)
+# torch.Size([1280])
+
+# Keep all visual tokens.
+feat_tokens = model.extract_features(
+    "assets/640x640.png",
+    pooling="none",
+    to_cpu=True,
+)
+print(feat_tokens.shape)
+# torch.Size([N_visual_tokens, 1280])
+```
+
+Useful feature-extraction arguments:
+
+| Argument | Default | Meaning |
+|---|---:|---|
+| `pooling` | `"mean"` | `"mean"`, `"max"`, or `"none"` |
+| `to_cpu` | `False` | If `True`, returns a detached CPU tensor; otherwise features remain on the model device |
+| `base_size` | `640` | Global image size used by the released inference pipeline |
+| `image_size` | `640` | Local/crop image size |
+| `crop_mode` | `False` | Enables the local-crop visual path when needed |
+
+For most downstream genomic benchmarks, `pooling="mean"` with `to_cpu=True` is the simplest starting point.
+
+### 2.4 Decoder Features
+
+OpticalDNA can also expose **prompt-conditioned Decoder hidden states**. Unlike pure visual features, this path executes the language Decoder.
+
+```python
+from opticaldna import OpticalDNA, PromptGenerator, PromptLength, TaskType
+
+model = OpticalDNA(
+    "hxxiang/opticaldna-hg38-2048",
+    device="cuda",
+)
+
+prompts = PromptGenerator()
+prompt = prompts.build(
+    TaskType.T1_FULL_OCR,
+    PromptLength.SHORT,
+    sample={},
+)
+
+decoder_features = model.extract_decoder_features(
+    "assets/640x640.png",
+    prompt=prompt,
+    layer=-1,
+    pooling="mean",
+    image_tokens_only=True,
+    to_cpu=True,
+)
+
+print(prompt)
+print(decoder_features.shape)
+```
+
+Expected:
+
+```text
+Free OCR.
+torch.Size([1280])
+```
+
+Decoder feature options:
+
+| Argument | Default | Meaning |
+|---|---:|---|
+| `layer` | `-1` | Decoder hidden-state layer; `-1` selects the final hidden state |
+| `pooling` | `"mean"` | `"mean"`, `"max"`, or `"none"` |
+| `image_tokens_only` | `True` | Keep only hidden states aligned with OpticalDNA image tokens |
+| `to_cpu` | `False` | Move the returned detached tensor to CPU |
+
+With `pooling="none"` and `image_tokens_only=True`, the output has shape:
+
+```text
+[N_image_tokens, 1280]
+```
+
+With `image_tokens_only=False`, the token dimension can also include prompt/text positions:
+
+```text
+[N_sequence_tokens, 1280]
+```
+
+### 2.5 Prompt-conditioned Generation
+
+If `prompt` is omitted, OpticalDNA uses the short T1 prompt:
+
+```text
+Free OCR.
+```
+
+Generation returns a Python `str`. The simplest generation example is:
+
+```python
+text = model.generate(
+    "assets/640x640.png",
+    max_new_tokens=256,  # Increase this value if a longer generated sequence is expected.
+)
+
+print(text)
+```
+
+A typical Free-OCR output is a DNA sequence string:
+
+```text
+AAGCCAAGAGTCTTCTAATATTTTACATTCACTAAGCAATATGAAAATT...
+```
+
+OpticalDNA exposes the six prompt families used during pretraining:
+
+| Task | `TaskType` | Purpose | Possible output |
+|---|---|---|---|
+| T1 | `T1_FULL_OCR` | Read the full DNA document | DNA sequence text |
+| T2 | `T2_FULL_OCR_GROUNDING` | Read DNA and ground lines/regions | Sequence plus bounding boxes |
+| T3 | `T3_ROI_OCR` | OCR specified DNA regions | Sequence for each requested box |
+| T4 | `T4_MASK_COMPLETION` | Recover masked/occluded DNA | Predicted DNA plus region boxes |
+| T5 | `T5_SUBSEQ_LOCATE` | Locate a query subsequence | Matching bounding boxes, or `[]` |
+| T6 | `T6_CHR_CLASSIFICATION` | Chromosome classification | Chromosome label; primarily HG38/human-oriented |
+
+Prompt lengths:
+
+```text
+PromptLength.SHORT
+PromptLength.MEDIUM
+PromptLength.LONG
+```
+
+Examples:
+
+```python
+from opticaldna import PromptGenerator, PromptLength, TaskType
+
+prompts = PromptGenerator()
+
+# T1: Free OCR
+free_ocr_prompt = prompts.build(
+    TaskType.T1_FULL_OCR,
+    PromptLength.SHORT,
+    sample={},
+)
+
+# T5: subsequence localization
+locate_prompt = prompts.build(
+    TaskType.T5_SUBSEQ_LOCATE,
+    PromptLength.MEDIUM,
+    sample={"query": "ACGTACGT"},
+)
+
+locate_output = model.generate(
+    "assets/640x640.png",
+    prompt=locate_prompt,
+    max_new_tokens=256,
+)
+
+print(locate_output)
+```
+
+For T3 ROI OCR and T4 masked completion, provide bounding boxes in:
+
+```python
+sample = {
+    "boxes": [
+        [img_id, x1, y1, x2, y2],
+        # ...
+    ]
+}
+```
+
+For multi-page documents, `img_id` is the **0-based page index**.
+
+### 2.6 Transformers API
+
+The Hugging Face repositories also expose the OpticalDNA methods through the standard Transformers custom-model interface.
+
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model_id = "hxxiang/opticaldna-hg38-2048"
+
+tokenizer = AutoTokenizer.from_pretrained(
+    model_id,
+    trust_remote_code=True,
+)
+
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    trust_remote_code=True,
+    dtype="auto",
+).cuda().eval()
+
+# Pure visual features: language Decoder is not executed.
+features = model.extract_features(
+    "assets/640x640.png",
+    pooling="mean",
+    to_cpu=True,
+)
+print(features.shape)
+# torch.Size([1280])
+
+# Build a prompt directly from the remote OpticalDNA model.
+prompt = model.build_prompt(
+    "t1_full_ocr",
+    length="short",
+)
+
+# Prompt-conditioned Decoder features.
+decoder_features = model.extract_decoder_features(
+    tokenizer,
+    "assets/640x640.png",
+    prompt=prompt,
+    layer=-1,
+    pooling="mean",
+    to_cpu=True,
+)
+
+# Decoder output.
+text = model.generate_document(
+    tokenizer,
+    "assets/640x640.png",
+    prompt=prompt,
+    max_new_tokens=256,
+)
+
+print(text)
+```
+
+OpticalDNA uses fail-fast checkpoint loading: trained checkpoint parameters are validated during loading rather than silently falling back to partially initialized weights.
+
+---
+
+## 📁 Repository Structure
+
+```text
+OpticalDNA/
+├── opticaldna/                 # Model, tokenizer, and public inference API
+├── src/                        # Training and data-loading source code
+│   ├── pretrain_opticaldna.py  # Pre-training entry point
+│   └── opticaldna_data/        # Dataset, conversation builder, and data collator
+├── scripts/                    # Standalone utility scripts
+│   └── data/                   # Data preparation utilities
+├── tests/                      # Fast CI tests + released-checkpoint smoke tests
+├── .github/workflows/          # GitHub Actions CI
+├── assets/                     # README figures and example DNA page
+├── environment.yml             # Conda environment specification
+├── LICENSE
+└── README.md
+```
+
+The main directories are:
+
+1. `opticaldna/`: model configuration, tokenizer files, and OpticalDNA model wrappers.
+2. `src/`: training entry point and data-loading modules used during pre-training.
+3. `scripts/data/`: standalone data preparation scripts for generating processed VisualDNA data.
+4. `assets/`: figures used in this README.
+
+## ⚙️ 3. Environment
+
+### 3.1 GPU Environment
 
 - CUDA Toolkit >= 11.8
 - CUDA >= 7.5
@@ -132,7 +494,7 @@ OpticalDNA reformulates genomic sequence modeling as a document-understanding pr
 - Transformers: 4.56.2
 - Torch >= 2.6.0+cu118
 
-### 2.2 Conda Environment Setup
+### 3.2 Conda Environment Setup
 
 Install the environment from `environment.yml`:
 
@@ -182,15 +544,15 @@ pip install numpy==1.26
 
 ---
 
-## 🧬 3. Install VisualDNA
+## 🧬 4. Install VisualDNA
 
 ```bash
 pip install visualdna
 ```
 
-## 🗂️ 4. Data Preparation
+## 🗂️ 5. Data Preparation
 
-### 4.1 Data Layout
+### 5.1 Data Layout
 
 OpticalDNA uses data generated by the VisualDNA rendering pipeline. Each dataset contains a `raw/` directory for source files and a `processed/` directory for rendered DNA document images, bounding boxes, and metadata.
 
@@ -224,7 +586,7 @@ then the corresponding arguments should be:
 --dataset hg38-2048
 ```
 
-### 4.2 Raw Data Download
+### 5.2 Raw Data Download
 
 We provide the raw data links used to construct the OpticalDNA pre-training datasets. After downloading the raw files, place them under the corresponding `raw/` directory before running the VisualDNA rendering pipeline.
 
@@ -233,7 +595,7 @@ We provide the raw data links used to construct the OpticalDNA pre-training data
 | HG38 | Human reference genome data used for OpticalDNA pre-training | [Download](<https://huggingface.co/datasets/hxxiang/dna_benchmarks/tree/main/raw_data/hg38-2048>) | `/path/to/opticaldna_dataset/hg38-2048/raw/` |
 | Rice | Rice genome data used for OpticalDNA pre-training | [Download](https://huggingface.co/datasets/hxxiang/dna_benchmarks/tree/main/raw_data/RiceSuperPIRdb-PRETRAIN_GENOME_TILING/NIP-T2T_w2048_o1920_SeqCase.UPPER) | `/path/to/opticaldna_dataset/rice/raw/` |
 
-### 4.3 Process Raw Data with VisualDNA
+### 5.3 Process Raw Data with VisualDNA
 
 The data processing utilities are placed under:
 
@@ -253,7 +615,7 @@ The processing workflow contains two steps:
 
 Run `scripts/data/generate_processed.py` to convert raw genome sequences into rendered DNA document images and bounding-box annotations.
 
-#### 5.1 HG38 Example
+#### 5.3.1 HG38 Example
 
 ```bash
 python scripts/data/generate_processed.py \
@@ -270,7 +632,7 @@ python scripts/data/generate_processed.py \
   --shard-size auto
 ```
 
-#### 5.2 Rice Example
+#### 5.3.2 Rice Example
 
 ```bash
 python scripts/data/generate_processed.py \
@@ -379,7 +741,7 @@ The expected raw file path is:
 /path/to/opticaldna_dataset/<raw-dataset>/raw/<raw-dataset>.parquet
 ```
 
-### 4.4 Command Examples
+### 5.4 Command Examples
 
 Most pre-training workflows are expected to run on Linux servers. Windows `cmd` examples are also provided for users who prepare data locally.
 
@@ -449,7 +811,7 @@ python scripts\data\add_raw_columns_to_processed_index.py ^
   --columns chr_name
 ```
 
-### 4.5 Notes
+### 5.5 Notes
 
 - `raw/{dataset}.parquet` should exist before running `generate_processed.py`.
 - The `processed/` directory is generated automatically by VisualDNA.
@@ -457,13 +819,12 @@ python scripts\data\add_raw_columns_to_processed_index.py ^
 - The same scripts can be used for HG38, rice, or any other dataset by changing parser arguments.
 - Keep these scripts under `scripts/data/` because they are command-line data preparation utilities rather than model or training modules.
 
-
-## 🚀 5. Pre-training
+## 🚀 6. Pre-training
 
 OpticalDNA is initialized from the DeepSeek-OCR checkpoint. Download the checkpoint from [this link](https://1drv.ms/u/c/53030532e7d1aed6/IQCG1Ja7O8kUQo1_OAPl-1EDAa9pzp4oNGJl5JWr0Tr-yZQ?e=Wr4Hpe) and place the extracted checkpoint directory under `opticaldna/`.
 
 
-### 5.1 HG38 Example
+### 6.1 HG38 Example
 
 ```bash
 conda activate opticaldna
@@ -492,7 +853,7 @@ src/pretrain_opticaldna.py --backend nccl \
   --lora_projector
 ```
 
-### 5.2 Rice Example
+### 6.2 Rice Example
 
 ```bash
 conda activate opticaldna
@@ -521,14 +882,31 @@ src/pretrain_opticaldna.py --backend nccl \
   --learning_rate 5e-4 --max_steps ${max_steps} --lora_projector --lora_decoder
 ```
 
-## 📝 6. Notes for Release Users
+## 📝 7. Notes for Release Users
 
-- Replace all example paths with local paths before running.
-- Use `HF_HUB_OFFLINE=1` when loading only local checkpoints.
-- Large model weights and generated datasets are intentionally excluded from the repository. Put them under local paths and pass them through command-line arguments.
-- The model code is adapted for OpticalDNA while preserving compatibility with the underlying OCR-style vision-language architecture.
+- Replace example paths with local paths when needed.
+- Large model weights and generated datasets are hosted externally and are not committed to GitHub.
+- Loading custom OpticalDNA checkpoints through Transformers requires `trust_remote_code=True`.
 
+## ✅ 8. Testing and CI
 
-## 📄 7. License
+Fast tests run automatically on every GitHub push and pull request. They check syntax, the Hugging Face configuration/public API contract, and fail-fast checkpoint validation without downloading model weights. Pull requests and `main` also run a lightweight CPU runtime-import check.
+
+```bash
+python -m pytest tests/unit
+```
+
+Before a model release, run the real-checkpoint smoke test:
+
+```bash
+python tests/smoke/test_checkpoint_loading.py \
+  --model hxxiang/opticaldna-hg38-2048 \
+  --device cuda \
+  --image assets/640x640.png
+```
+
+See `tests/README.md` for the rice checkpoint and optional generation test.
+
+## 📄 9. License
 
 This repository is released under the MIT License. Parts of the model implementation are adapted from third-party open-source projects; please also follow the corresponding upstream licenses and notices where applicable.

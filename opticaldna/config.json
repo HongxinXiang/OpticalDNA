@@ -12,7 +12,8 @@
   ],
   "auto_map": {
     "AutoConfig": "modeling_opticaldna.OpticalDNAConfig",
-    "AutoModel": "modeling_opticaldna.OpticalDNAForCausalLM"
+    "AutoModel": "modeling_opticaldna.OpticalDNAForCausalLM",
+    "AutoModelForCausalLM": "modeling_opticaldna.OpticalDNAForCausalLM"
   },
   "language_config": {
     "architectures": [
