@@ -39,3 +39,10 @@ checkpoints/
 .idea/
 .vscode/
 .DS_Store
+
+# Local Hugging Face release workspace (never commit)
+.release/
+hf_upload/
+hf_staging/
+*_exports_merged/
+*_exports_merged_*/
