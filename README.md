@@ -546,9 +546,21 @@ pip install numpy==1.26
 
 ## 🧬 4. Install VisualDNA
 
+[VisualDNA](https://pypi.org/project/visualdna/) is the rendering and dataset-building toolkit used by OpticalDNA to convert DNA sequences into images.
+
+Install the public package from PyPI:
+
 ```bash
 pip install visualdna
 ```
+
+Verify the installation:
+
+```bash
+visualdna --version
+```
+
+VisualDNA is used in the following sections to render raw genomic sequences into the image-based inputs required by OpticalDNA.
 
 ## 🗂️ 5. Data Preparation
 
